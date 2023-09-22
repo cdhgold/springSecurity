@@ -13,7 +13,9 @@ import org.springframework.security.config.annotation.web.configuration.WebSecur
 import org.springframework.security.core.userdetails.UserDetailsService;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.security.web.authentication.UsernamePasswordAuthenticationFilter;
-
+/*
+ * 
+ */
 @Configuration
 @EnableWebSecurity
 @RequiredArgsConstructor
@@ -67,7 +69,7 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
         customAuthenticationFilter.afterPropertiesSet();
         return customAuthenticationFilter;
     }
-
+//
     @Bean
     public CustomLoginSuccessHandler customLoginSuccessHandler() {
         return new CustomLoginSuccessHandler();
