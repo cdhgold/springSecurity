@@ -14,7 +14,10 @@ import org.springframework.security.core.userdetails.UserDetailsService;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.security.web.authentication.UsernamePasswordAuthenticationFilter;
 /*
- *   
+ *  인증요청시 실행순서
+ *  0. authenticationFilter
+ *  1.customAuthenticationFilter 2.  UsernamePasswordAuthenticationFilter - token 생성 
+ *  3.CustomAuthenticationProvider 
  */
 @Configuration
 @EnableWebSecurity
@@ -60,7 +63,7 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
     public BCryptPasswordEncoder bCryptPasswordEncoder() {
         return new BCryptPasswordEncoder();
     }
-
+// setFilterProcessesUrl 정의와, 인증성공시처리 로직 포함 
     @Bean
     public CustomAuthenticationFilter customAuthenticationFilter() throws Exception {
         CustomAuthenticationFilter customAuthenticationFilter = new CustomAuthenticationFilter(authenticationManager());

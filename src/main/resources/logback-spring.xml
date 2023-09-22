@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<configuration>
+    <include resource="org/springframework/boot/logging/logback/defaults.xml" />
+    <include resource="org/springframework/boot/logging/logback/console-appender.xml" />    
+
+    
+    <logger name="org.springframework" level="ERROR"/>
+    <logger name="com.mang.example.security" level="DEBUG"/>
+    <logger name="org.springframework.jndi" level="INFO" />
+ 
+    <!-- SQL log -->
+    <logger name="36mjdbc.sqlonly" level="OFF"/>
+    <logger name="jdbc.audit" level="OFF"/>
+    <logger name="java.sql.ResultSet" level="OFF"/>
+    <!-- 테이터 내용이 보고싶으면 아래 부분 DEBUG 로 변경  -->
+    <logger name="jdbc.resultse" level="OFF"/>
+    <logger name="jdbc.resultsettable" level="OFF"/>
+    
+    
+    <logger name="jdbc.resultset" level="OFF"/>
+    <logger name="java.sql.PreparedStatement" level="OFF"/>
+    <logger name="org.apache.commons.digester.Digester" level="OFF"/>
+    <logger name="jdbc.connection" level="DEBUG"/>
+    <logger name="jdbc.sqlonly" level="DEBUG" />
+    <logger name="jdbc.sql.timing" level="OFF"/>
+    <logger name="com.google.code.lightssh" level="OFF"/>
+
+     <root level="DEBUG" additivity="false">
+        <!-- <appender-ref ref="STDOUT" /> -->
+        <appender-ref ref="CONSOLE" additivity="false" />
+     </root>
+     
+
+
+
+</configuration>
