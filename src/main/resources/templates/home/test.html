@@ -1,0 +1,67 @@
+<!doctype html>
+<html xmlns:th="http://www.thymeleaf.org"
+      class="no-js" lang="ko">
+<head>
+    <title>test</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="csrf-token" content="${_csrf.token}">
+</head>
+<body>
+
+<script>
+	// /test/select1000
+	function myFunction() {debugger;
+		let csrfToken = document.querySelector('meta[name="csrf-token"]').content;
+
+	  fetch("http://localhost:8082/test/select1000", {
+		  method: "POST",
+		   headers: {
+	        "Content-Type": "application/json",
+	        "X-CSRF-Token": csrfToken  // 사용하는 헤더 이름은 백엔드 설정에 따라 다를 수 있습니다.
+	    },
+	  body: JSON.stringify({ 
+			  "dl_out": [
+			    {
+			      "item1": "value1",
+			      "item2": "value2",
+			      "item3": "value3",
+			      "item4": "value4",
+			      "item5": "value5"
+			    },
+			    {
+			      "item1": "value1",
+			      "item2": "value2",
+			      "item3": "value3",
+			      "item4": "value4",
+			      "item5": "value5"
+			    },
+			    {
+			      "item1": "value1",
+			      "item2": "value2",
+			      "item3": "value3",
+			      "item4": "value4",
+			      "item5": "value5"
+			    }
+			  ]
+			}),
+			})
+		.then(response => response.json())  // or response.text()
+		.then(data => console.log(data))
+		.catch(error => console.error("Fetch Error:", error));
+	}
+</script>
+<div>
+    <p>여기는 test 페이지 입니다!</p>
+    <form class="form-horizontal" id="loginForm" role="form" method="get" action="/about">
+        <button class="flex-c-m stext-101 cl0 size-121 bg3 bor1 hov-btn3 p-lr-15 trans-04 pointer">
+            로그인이 필요한 About 페이지로 이동
+        </button>
+    </form>
+<button onclick="myFunction()">Click me</button>
+
+
+</div>
+
+</body>
+</html>
