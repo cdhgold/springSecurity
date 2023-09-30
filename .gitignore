@@ -1,0 +1,46 @@
+### Java template
+*.class
+ 
+# Package Files #
+*.war
+*.ear
+ 
+### macOS template
+*.DS_Store
+.AppleDouble
+.LSOverride
+.factorypath
+.tern-project
+ 
+# IntelliJ project files
+.idea
+.idea/*.xml
+*.iml
+out
+gen
+build
+rebel.xml
+wqDefaultProperty.json
+ 
+# Compliled files
+/target/
+**/target
+ 
+/example/
+
+#sap jco
+SAP.jcoDestination
+ 
+# Gradle
+.gradle
+/build/
+.gradletasknamecache
+.vscode/launch.json
+
+#file
+uploadfile/*
+/src/main/webapp/RD/CSS/BKG/CSSBKG3305R02_KR.mrq
+/src/main/webapp/RD/DYCSS/DYBKG/DYCSSBKG3305R02_KR.bak
+/src/main/webapp/RD/DYCSS/DYBKG/DYCSSBKG3305R02_KR.mrq
+/src/main/webapp/RD/DYCSS/DYBKG/DYCSSBKG3305R02_KR_V50.bak
+/src/main/webapp/RD/DYCSS/DYBKG/viewer.rdf
