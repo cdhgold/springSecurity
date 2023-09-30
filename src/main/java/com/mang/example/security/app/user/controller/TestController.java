@@ -2,6 +2,7 @@ package com.mang.example.security.app.user.controller;
 
 import com.mang.example.security.app.user.model.UserVO;
 import com.mang.example.security.app.user.service.UserService;
+import com.mang.example.security.comm.ComMap;
 import com.mang.example.security.comm.ControllerException;
 import com.mang.example.security.comm.TestVo;
 import com.mang.example.security.enums.role.UserRole;
@@ -52,10 +53,18 @@ public class TestController extends CommController{
 		
 		try {
 			   List<TestVo> attachList = getObjectList(param, "dl_out", TestVo.class, usrInfo);
-		         
+			   ComMap map = new ComMap();
 		// 리스트
 		logger.debug("result ==> " + attachList.size());
-		
+			for(TestVo vo : attachList) { // for each loop 
+					
+				logger.debug("getItem2 ==> " +vo.getItem2());
+				if("bbb".equals(vo.getItem2())) {
+					map.put("selVo",vo);
+				}
+			}
+
+			rtnMap.put("dl_tmp", map);
 		
 		} catch (Exception e) {
 		
